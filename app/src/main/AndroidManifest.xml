@@ -9,13 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <!--Actividad para abrir como app -->
+        <activity android:name=".MainActivity" android:label="Actividad 1" android:taskAffinity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--Segunda actividad.-->
+        <activity android:name=".MainActivity2" android:label="Actividad 2" android:taskAffinity=".MainActivity2">
+            <!--Intent para compartir imagenes-->
+            <intent-filter>
+                <!--Desplega entre las opciones de compartir-->
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="image/*" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
+
 
 </manifest>
